@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Student from "./Student"
+import { Fragment } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+
+  const data=[
+    {
+      id:'e1',
+      name: 'Prajwal'
+    },
+    {
+      id:'e2',
+      name:'Roshini'
+    }
+  ]
+  return(
+    <Fragment>
+      {
+        data.map((item,i)=>(
+          <Student key={i} id={item.id} name={item.name}/>
+        ))
+      }
+    </Fragment>
+  )
 }
-
-export default App;
